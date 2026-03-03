@@ -1,0 +1,13 @@
+{
+  "name": "edgedelta-pipelines",
+  "version": "2.2.0",
+  "description": "Create, validate, and deploy EdgeDelta pipeline v3 configurations. Provides 7 production-tested templates, validation tools, environment inspection, and direct API deployment.",
+  "author": {
+    "name": "Edge Delta",
+    "email": "plugins@edgedelta.com"
+  },
+  "homepage": "https://docs.edgedelta.com",
+  "repository": "https://github.com/edgedelta/claude-code-plugins",
+  "license": "Apache-2.0",
+  "keywords": ["pipelines", "yaml", "observability", "telemetry", "deployment", "ottl"]
+}
