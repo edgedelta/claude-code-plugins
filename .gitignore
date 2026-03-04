@@ -17,3 +17,11 @@ build/
 # Editor
 .idea/
 *.swp
+
+# Claude Code local settings
+.claude/
+
+# Internal planning and development docs
+docs/
+asciiart
+edge-delta-plugin-marketplace-plan.md
