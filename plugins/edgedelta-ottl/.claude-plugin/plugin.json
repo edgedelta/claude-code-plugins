@@ -9,5 +9,6 @@
   "homepage": "https://docs.edgedelta.com",
   "repository": "https://github.com/edgedelta/claude-code-plugins",
   "license": "MIT",
-  "keywords": ["ottl", "edx", "transformations", "observability", "pipeline"]
+  "keywords": ["ottl", "edx", "transformations", "observability", "pipeline"],
+  "skills": ["./skills/edgedelta-ottl"]
 }
