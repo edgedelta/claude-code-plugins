@@ -18,7 +18,7 @@
       "category": "developer-tools",
       "tags": ["ottl", "edx", "transformations", "observability"],
       "author": { "name": "Edge Delta" },
-      "license": "Apache-2.0"
+      "license": "MIT"
     },
     {
       "name": "edgedelta-pipelines",
@@ -28,7 +28,7 @@
       "category": "configuration",
       "tags": ["pipelines", "yaml", "observability", "telemetry", "deployment"],
       "author": { "name": "Edge Delta" },
-      "license": "Apache-2.0"
+      "license": "MIT"
     }
   ]
 }

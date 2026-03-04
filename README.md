@@ -86,4 +86,4 @@ Get these from [app.edgedelta.com](https://app.edgedelta.com).
 
 ## License
 
-Apache-2.0 — Edge Delta, Inc.
+MIT License — Edge Delta, Inc.
