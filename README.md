@@ -15,31 +15,11 @@ Official Claude Code plugins from Edge Delta — AI-powered observability automa
 
 ## Plugins
 
-### `edgedelta-ottl`
-
-OTTL (OpenTelemetry Transformation Language) function reference for Edge Delta pipelines.
-
-**Auto-activates when you:**
-- Ask about OTTL syntax, operators, or language rules
-- Need documentation for any of 124 OTTL functions (standard + EDX extensions)
-- Work on `ottl_transform` or `ottl_filter` processor configurations
-- Encounter OTTL syntax errors and need strict validation
-- Ask about EDXRedis, EDXCoalesce, or any other EDX extension
-
-### `edgedelta-pipelines`
-
-Create, validate, and deploy Edge Delta pipeline v3 configurations.
-
-**Auto-activates when you:**
-- Want to create or deploy an Edge Delta pipeline
-- Need to validate a pipeline YAML configuration
-- Ask about telemetry collection, routing, or processing
-- Say "what can I monitor" in your environment
-
-**Includes:**
-- 7 production-tested pipeline templates
-- Validation and deployment scripts
-- Environment inspection tools
+| Plugin | Description | Activates when you... |
+|---|---|---|
+| `edgedelta-ottl` | OTTL function reference — 124 functions (101 standard + 23 EDX extensions) | Ask about OTTL syntax, `ottl_transform`/`ottl_filter` configs, EDXRedis, EDXCoalesce |
+| `edgedelta-pipelines` | Create, validate, and deploy pipeline v3 configs with 7 production templates | Say "create a pipeline", ask about telemetry collection/routing, need to deploy to EdgeDelta |
+| `edgedelta-reference` | Complete pipeline component reference — 30 sources, 38 processors, 54 destinations with docs links | Ask "what sources/destinations are available", need YAML syntax for any component |
 
 ## Installation
 
@@ -50,6 +30,7 @@ Create, validate, and deploy Edge Delta pipeline v3 configurations.
 # Install the plugins you need
 /plugin install edgedelta-ottl@edge-delta-official-plugins
 /plugin install edgedelta-pipelines@edge-delta-official-plugins
+/plugin install edgedelta-reference@edge-delta-official-plugins
 ```
 
 ### Team Rollout
@@ -68,7 +49,8 @@ Add to `.claude/settings.json` in your shared repo:
   },
   "enabledPlugins": [
     "edgedelta-ottl@edge-delta-official-plugins",
-    "edgedelta-pipelines@edge-delta-official-plugins"
+    "edgedelta-pipelines@edge-delta-official-plugins",
+    "edgedelta-reference@edge-delta-official-plugins"
   ]
 }
 ```
