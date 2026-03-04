@@ -4,7 +4,7 @@
   "description": "OTTL function reference covering 124 functions (101 standard + 23 EDX). Use when users need OTTL syntax help, EDXRedis guidance, or transformation language validation. Includes critical naming conventions for EDX functions.",
   "author": {
     "name": "Edge Delta",
-    "url": "https://edgedelta.com"
+    "email": "plugins@edgedelta.com"
   },
   "homepage": "https://docs.edgedelta.com",
   "repository": "https://github.com/edgedelta/claude-code-plugins",
