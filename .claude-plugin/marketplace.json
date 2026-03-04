@@ -1,34 +1,41 @@
 {
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "edge-delta-official-plugins",
+  "description": "Official Edge Delta plugins for observability, SRE, and DevOps workflows in Claude Code",
   "owner": {
     "name": "Edge Delta",
     "email": "plugins@edgedelta.com"
   },
-  "metadata": {
-    "description": "Official Edge Delta plugins for observability, SRE, and DevOps workflows in Claude Code",
-    "version": "1.0.0",
-    "pluginRoot": "./plugins"
-  },
   "plugins": [
     {
       "name": "edgedelta-ottl",
-      "source": "./plugins/edgedelta-ottl",
       "description": "OTTL function reference covering 124 functions (101 standard + 23 EDX). Use when users need OTTL syntax help, EDXRedis guidance, or transformation language validation.",
       "version": "1.0.1",
-      "category": "developer-tools",
+      "author": {
+        "name": "Edge Delta",
+        "email": "plugins@edgedelta.com"
+      },
+      "source": "./plugins/edgedelta-ottl",
+      "category": "development",
+      "homepage": "https://docs.edgedelta.com",
       "tags": ["ottl", "edx", "transformations", "observability"],
-      "author": { "name": "Edge Delta" },
-      "license": "MIT"
+      "strict": false,
+      "skills": ["./plugins/edgedelta-ottl/skills/edgedelta-ottl"]
     },
     {
       "name": "edgedelta-pipelines",
-      "source": "./plugins/edgedelta-pipelines",
       "description": "Create, validate, and deploy EdgeDelta pipeline v3 configurations with 7 production-tested templates and direct API deployment.",
       "version": "2.2.0",
-      "category": "configuration",
+      "author": {
+        "name": "Edge Delta",
+        "email": "plugins@edgedelta.com"
+      },
+      "source": "./plugins/edgedelta-pipelines",
+      "category": "development",
+      "homepage": "https://docs.edgedelta.com",
       "tags": ["pipelines", "yaml", "observability", "telemetry", "deployment"],
-      "author": { "name": "Edge Delta" },
-      "license": "MIT"
+      "strict": false,
+      "skills": ["./plugins/edgedelta-pipelines/skills/edgedelta-pipelines"]
     }
   ]
 }
