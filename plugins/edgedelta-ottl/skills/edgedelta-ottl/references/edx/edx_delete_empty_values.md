@@ -5,7 +5,7 @@
 **Signature**: `edx_delete_empty_values(target, excludeKeys, emptyStringValues, strategies) -> void`
 **Return Type**: void (modifies map in-place)
 **Minimum Agent Version**: v1.28.0
-**Source**: /pkg/ottlext/funcs/func_edx_delete_empty_values.go
+**Source**: https://docs.edgedelta.com/ottl-extensions/
 
 ---
 

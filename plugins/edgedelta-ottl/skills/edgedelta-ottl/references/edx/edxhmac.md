@@ -5,7 +5,7 @@
 **Signature**: `EDXHmac(message, key, algorithm, encoding) -> string`
 **Return Type**: string (encoded HMAC signature)
 **Minimum Agent Version**: v2.6.0
-**Source**: /pkg/ottlext/funcs/func_edx_hmac.go
+**Source**: https://docs.edgedelta.com/ottl-extensions/
 
 ---
 

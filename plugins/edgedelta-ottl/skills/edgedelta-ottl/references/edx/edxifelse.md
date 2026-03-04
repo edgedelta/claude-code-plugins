@@ -5,7 +5,7 @@
 **Signature**: `EDXIfElse(condition, valueIfTrue, valueIfFalse) -> any`
 **Return Type**: any (type of returned value)
 **Minimum Agent Version**: v2.0.0
-**Source**: /pkg/ottlext/funcs/func_edx_if_else.go
+**Source**: https://docs.edgedelta.com/ottl-extensions/
 
 ---
 

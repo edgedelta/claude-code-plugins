@@ -1,6 +1,6 @@
 # Sequence-Compatible Processors
 
-Only these 23 processors can be used inside `sequence` nodes (from sequence_node.go:52-76):
+Only these 23 processors can be used inside `sequence` nodes:
 
 ## Transformation & Filtering
 

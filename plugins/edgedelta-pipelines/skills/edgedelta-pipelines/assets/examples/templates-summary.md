@@ -11,7 +11,7 @@ All templates follow EdgeDelta v3 sequence architecture best practices and have 
 
 ## Template 1: Log Ingestion with PII Masking ✓
 
-**File:** `/tmp/TEMPLATE_1_FINAL.yaml`
+**File:** `assets/templates/template-1-log-pii-masking.yaml`
 **Tag:** `template1-log-ingestion-pii-masking`
 **Use Case:** Production application monitoring with compliance requirements
 
@@ -41,7 +41,7 @@ file_input → sequence (3x generic_mask + extract_metric) → ed_output
 
 ## Template 2: OTLP Dual Receiver ✓
 
-**File:** `/tmp/template-2-otlp-dual.yaml`
+**File:** `assets/templates/template-2-otlp-dual.yaml`
 **Tag:** `template2-otlp-dual-receiver`
 **Use Case:** OpenTelemetry data ingestion with dual protocol support
 
@@ -71,7 +71,7 @@ otlp_input (HTTP:4318) ─┘
 
 ## Template 3: Mixed Telemetry Processing ✓
 
-**File:** `/tmp/template-3-mixed-telemetry.yaml`
+**File:** `assets/templates/template-3-mixed-telemetry.yaml`
 **Tag:** `template3-mixed-telemetry`
 **Use Case:** Unified logs and metrics collection with separate processing paths
 
@@ -105,7 +105,7 @@ otlp_input:9090 → metric_processing (ottl_transform) ────────�
 
 ## Template 4: API Pull with JSON Processing ✓
 
-**File:** `/tmp/template-4-api-json-processing.yaml`
+**File:** `assets/templates/template-4-api-json.yaml`
 **Tag:** `template4-api-json-processing`
 **Use Case:** REST API polling with JSON array processing (ServiceNow/CMDB pattern)
 
@@ -137,7 +137,7 @@ http_pull_input → sequence (ottl_transform + json_unroll + ottl_transform) →
 
 ## Template 5: Multi-API Pull with Dynamic Headers ✓
 
-**File:** `/tmp/template-5-multi-api-dynamic-headers.yaml`
+**File:** `assets/templates/template-5-multi-api.yaml`
 **Tag:** `template5-multi-api-dynamic-headers`
 **Use Case:** Multiple API sources with dynamic authentication (Duo Security pattern)
 
@@ -345,10 +345,6 @@ All templates are located in `assets/templates/`:
 5. `template-5-multi-api-dynamic-headers.yaml` - Multi-API with dynamic headers
 6. `template-6-prometheus-scraper.yaml` - Prometheus metrics scraper
 7. `template-7-lookup-enrichment.yaml` - Lookup enrichment with routing
-
-Supporting documentation:
-- `TEMPLATES_SUMMARY.md` - Initial 3-template summary
-- `ALL_TEMPLATES_FINAL_SUMMARY.md` - This file (complete collection)
 
 ---
 

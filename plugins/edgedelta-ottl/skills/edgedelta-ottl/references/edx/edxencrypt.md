@@ -5,7 +5,7 @@
 **Signature**: `EDXEncrypt(value, keyclass, keyId, defaultVal) -> string`
 **Return Type**: string (base64-encoded JSON envelope)
 **Minimum Agent Version**: v2.5.0
-**Source**: /pkg/ottlext/funcs/func_edx_crypto_encrypt.go
+**Source**: https://docs.edgedelta.com/ottl-extensions/
 
 ---
 

@@ -23,13 +23,13 @@ Activate this skill when:
 - User asks "how do I write an OTTL statement?" or "what's the syntax for...?"
 - User needs to understand OTTL conditionals, where clauses, or operators
 - User wants to know which OTTL functions are available
-- Another skill (like edgedelta-pipelines or edgedelta-reference) needs OTTL function reference
+- Another skill (like edgedelta-pipelines) needs OTTL function reference
 
 ## Do NOT Use This Skill When
 
 - User wants to deploy a complete pipeline → use `edgedelta-pipelines` skill instead
-- User asks about processors (not OTTL functions) → use `edgedelta-reference` skill
-- User asks about dashboards → use `edgedelta-dashboards` skill
+- User asks about processors (not OTTL functions) → consult the EdgeDelta processor documentation at https://docs.edgedelta.com/processors
+- User asks about dashboards → consult the EdgeDelta dashboard documentation at https://docs.edgedelta.com
 - General observability questions without OTTL context
 
 ## Core Capabilities
@@ -39,7 +39,7 @@ Activate this skill when:
 3. **Strict Syntax Validation**: Enforcement of critical rules (lowercase operators, single-line conditions)
 4. **EDX Extensions**: Comprehensive docs for all 23 EdgeDelta custom functions
 5. **EDXRedis Deep Dive**: 1000+ lines of documentation for Redis integration
-6. **Cross-Skill Integration**: Seamless reference from edgedelta-pipelines and edgedelta-reference
+6. **Cross-Skill Integration**: Seamless reference from edgedelta-pipelines
 
 ## Function Coverage
 
@@ -411,12 +411,12 @@ Time: Now, Time, Duration, UnixMilli, UnixNano, FormatTime, TruncateTime
 Which category interests you? I can provide detailed examples for any function."
 ```
 
-### Workflow 7: Cross-Skill Reference (from edgedelta-pipelines or edgedelta-reference)
+### Workflow 7: Cross-Skill Reference (from edgedelta-pipelines)
 
-**When**: The `edgedelta-pipelines` or `edgedelta-reference` skill needs OTTL function reference
+**When**: The `edgedelta-pipelines` skill needs OTTL function reference
 
 **Steps**:
-1. edgedelta-pipelines/edgedelta-reference references this skill in their SKILL.md
+1. edgedelta-pipelines references this skill in their SKILL.md
 2. Read relevant OTTL function reference
 3. Provide syntax/examples back to the calling workflow
 4. Ensure strict syntax compliance
@@ -507,21 +507,17 @@ statements: |-
 **Deployment Types**: Standalone, Cluster, Sentinel (each has different URL format)
 **Authentication**: Manual (username/password), UserSecret (not yet implemented)
 
-### Source Code Validation
+### Reference Sources
 
-All OTTL references are validated against EdgeDelta source code:
-- **Standard OTTL**: `EdgeDelta source code repository/vendor/github.com/open-telemetry/opentelemetry-collector-contrib/pkg/ottl/ottlfuncs/`
-- **EDX Extensions**: `EdgeDelta source code repository/pkg/ottlext/funcs/`
-- **Documentation**: https://docs.edgedelta.com/ottl-extensions/, https://docs.edgedelta.com/ottl-converter/, https://docs.edgedelta.com/ottl-editors/
+All OTTL references are derived from EdgeDelta documentation and the OpenTelemetry OTTL specification:
+- https://docs.edgedelta.com/ottl-extensions/
+- https://docs.edgedelta.com/ottl-converter/
+- https://docs.edgedelta.com/ottl-editors/
 
 ## Cross-References
 
-### edgedelta-reference Skill
-**Relationship**: Complementary
-- edgedelta-reference: Processor-level documentation (ottl_transform, ottl_filter, etc.)
-- edgedelta-ottl: OTTL function-level documentation (Set, ParseJSON, EDXRedis, etc.)
-
-**Usage**: edgedelta-reference references this skill when users need OTTL function details
+### Processor Documentation
+For processor-level documentation (ottl_transform, ottl_filter, etc.), consult the EdgeDelta processor documentation at https://docs.edgedelta.com/processors.
 
 ### edgedelta-pipelines Skill
 **Relationship**: Pipeline integration
@@ -530,10 +526,8 @@ All OTTL references are validated against EdgeDelta source code:
 
 **Usage**: edgedelta-pipelines references this skill when building ottl_transform/ottl_filter configs
 
-### edgedelta-dashboards Skill
-**Relationship**: Separate domain
-- edgedelta-dashboards: UI/visualization operations
-- edgedelta-ottl: OTTL language specifications
+### Dashboard Documentation
+For UI/visualization operations, consult the EdgeDelta dashboard documentation at https://docs.edgedelta.com.
 
 ## Success Metrics
 
@@ -541,7 +535,7 @@ All OTTL references are validated against EdgeDelta source code:
 - User writes syntactically correct OTTL statements with proper single-line formatting
 - User understands strict syntax requirements (lowercase operators, single-line statements, proper YAML block scalars)
 - User always uses `statements: |-` format for EdgeDelta YAML configurations
-- Cross-skill referencing works seamlessly with edgedelta-pipelines and edgedelta-reference
+- Cross-skill referencing works seamlessly with edgedelta-pipelines
 - EDXRedis users can successfully configure TLS, authentication, and commands
 
 ## Example Interactions

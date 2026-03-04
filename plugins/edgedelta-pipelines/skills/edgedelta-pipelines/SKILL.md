@@ -6,7 +6,6 @@ description: This skill should be used when users want to create EdgeDelta pipel
 dependencies:
   - Python 3.11+
   - EdgeDelta API token
-  - edgedelta-reference skill (for processor syntax)
 ---
 
 # EdgeDelta Pipelines Skill
@@ -424,23 +423,16 @@ python3 assets/scripts/pipeline_builder.py --config <spec.json> --output <pipeli
 
 ## Cross-Skill Integration
 
-### Using edgedelta-reference Skill
+### Processor Reference
 
 **When**: User asks about specific processors, needs processor syntax, or wants processor specifications
 
-**The `edgedelta-reference` skill provides**:
-- Quick Copy snippets for all 23 sequence-compatible processors
-- Detailed documentation for generic_mask, extract_metric, ottl_transform, json_unroll
-- Processor parameter specifications
-- Common pitfalls and validation rules
-
-**How to use**:
+For processor syntax and documentation, consult https://docs.edgedelta.com/processors.
 
 **Example 1: User asks about a processor during pipeline building**
 ```
 User: "I need to mask credit cards in the logs"
-Assistant: [Activates edgedelta-reference skill]
-→ Reads MASTER_INDEX.md for generic_mask
+Assistant: Looks up generic_mask syntax from EdgeDelta processor docs
 → Returns Quick Copy snippet with credit card regex
 → Incorporates into pipeline sequence
 ```
@@ -448,8 +440,7 @@ Assistant: [Activates edgedelta-reference skill]
 **Example 2: User needs processor specifications**
 ```
 User: "What parameters does extract_metric support?"
-Assistant: [Activates edgedelta-reference skill]
-→ Reads references/processors/extract_metric.md
+Assistant: Consults https://docs.edgedelta.com/processors for extract_metric
 → Provides parameter table and examples
 → Helps user build extract_metric configuration
 ```
@@ -457,27 +448,25 @@ Assistant: [Activates edgedelta-reference skill]
 **Example 3: Troubleshooting processor issues**
 ```
 User: "My json_unroll is failing with 'path cannot start with dot'"
-Assistant: [Activates edgedelta-reference skill]
-→ Reads json_unroll.md Common Pitfalls section
+Assistant: Consults https://docs.edgedelta.com/processors for json_unroll
 → Identifies issue and provides fix
 → Updates pipeline configuration
 ```
 
 **Quick Reference Pattern**:
-- For processor syntax → use `edgedelta-reference` MASTER_INDEX.md
-- For detailed processor help → use `edgedelta-reference` detailed references
+- For processor syntax → consult https://docs.edgedelta.com/processors
 - For complete pipeline deployment → continue with this skill
 
 **Complementary Workflow**:
 1. This skill (edgedelta-pipelines): Template selection, environment inspection
-2. edgedelta-reference: Processor specifications and syntax lookups
+2. Processor docs (https://docs.edgedelta.com/processors): Processor specifications and syntax
 3. edgedelta-ottl: OTTL function reference (for ottl_transform/ottl_filter processors)
 4. This skill: Validation and deployment
 
 ## When NOT to Use This Skill
 
-- EdgeDelta dashboard operations → use `edgedelta-dashboards` skill
-- Processor reference lookups → use `edgedelta-reference` skill
+- EdgeDelta dashboard operations → consult https://docs.edgedelta.com
+- Processor reference lookups → consult https://docs.edgedelta.com/processors
 - OTTL function syntax or reference → use `edgedelta-ottl` skill
 - OTTL statement validation → use `edgedelta-ottl` skill
 - General observability questions without EdgeDelta context
@@ -485,4 +474,4 @@ Assistant: [Activates edgedelta-reference skill]
 
 ---
 
-You have comprehensive templates, validation tools, and automation scripts. Guide users confidently through pipeline creation, always validating before deployment, and leveraging the tested templates whenever possible. Use the `edgedelta-reference` skill for detailed processor specifications and syntax lookups. Use the `edgedelta-ottl` skill for OTTL function reference when building ottl_transform or ottl_filter processors.
+You have comprehensive templates, validation tools, and automation scripts. Guide users confidently through pipeline creation, always validating before deployment, and leveraging the tested templates whenever possible. For detailed processor specifications and syntax, consult https://docs.edgedelta.com/processors. Use the `edgedelta-ottl` skill for OTTL function reference when building ottl_transform or ottl_filter processors.

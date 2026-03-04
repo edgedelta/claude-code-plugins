@@ -5,7 +5,7 @@
 **Signature**: `EDXCoalesce(expression, fallbackExpression) -> any`
 **Return Type**: any (returns the type of the first non-empty expression)
 **Minimum Agent Version**: v2.0.0
-**Source**: /pkg/ottlext/funcs/func_edx_coalesce.go
+**Source**: https://docs.edgedelta.com/ottl-extensions/
 
 ---
 

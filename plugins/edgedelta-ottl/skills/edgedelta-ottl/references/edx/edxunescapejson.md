@@ -5,7 +5,7 @@
 **Signature**: `EDXUnescapeJSON(input) -> []byte`
 **Return Type**: []byte (unescaped JSON)
 **Minimum Agent Version**: v1.31.0
-**Source**: /pkg/ottlext/funcs/func_edx_unescape_json.go
+**Source**: https://docs.edgedelta.com/ottl-extensions/
 
 ---
 

@@ -56,7 +56,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Documentation
 - 3 reference documents (validation-rules, best-practices, sequence-processors)
 - Templates summary with use cases
-- Cross-skill integration with edgedelta-reference
 
 ## [2.0.0] - 2025-10-15
 

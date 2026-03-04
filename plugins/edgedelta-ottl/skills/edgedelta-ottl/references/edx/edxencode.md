@@ -5,7 +5,7 @@
 **Signature**: `EDXEncode(input, encoding, asBytes) -> string|[]byte`
 **Return Type**: string or []byte (based on asBytes parameter)
 **Minimum Agent Version**: v1.25.0
-**Source**: /pkg/ottlext/funcs/func_edx_encode.go
+**Source**: https://docs.edgedelta.com/ottl-extensions/
 
 ---
 

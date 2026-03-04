@@ -5,7 +5,7 @@
 **Signature**: `edx_keep_keys(target, keys) -> void`
 **Return Type**: void (modifies map in-place)
 **Minimum Agent Version**: v1.23.0
-**Source**: /pkg/ottlext/funcs/func_edx_keep_keys.go
+**Source**: https://docs.edgedelta.com/ottl-extensions/
 
 ---
 

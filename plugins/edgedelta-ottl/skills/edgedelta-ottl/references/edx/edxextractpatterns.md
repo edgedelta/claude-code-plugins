@@ -5,7 +5,7 @@
 **Signature**: `EDXExtractPatterns(input, pattern) -> map[string]string`
 **Return Type**: map[string]string (named groups)
 **Minimum Agent Version**: v1.22.0
-**Source**: /pkg/ottlext/funcs/func_edx_extract_patterns.go
+**Source**: https://docs.edgedelta.com/ottl-extensions/
 
 ---
 

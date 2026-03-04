@@ -5,7 +5,7 @@
 **Signature**: `EDXRedis(connection_config, commands) -> map[string]any`
 **Return Type**: Map with results keyed by outField names
 **Minimum Agent Version**: v2.5.0
-**Source**: `EdgeDelta source code repository/pkg/ottlext/funcs/func_edx_redis.go`
+**Source**: https://docs.edgedelta.com/ottl-extensions/
 
 ---
 

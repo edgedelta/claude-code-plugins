@@ -5,7 +5,7 @@
 **Signature**: `edx_code(code) -> void`
 **Return Type**: void (modifies item in place)
 **Minimum Agent Version**: v2.6.0
-**Source**: /pkg/ottlext/funcs/func_edx_code.go
+**Source**: https://docs.edgedelta.com/ottl-extensions/
 
 ---
 

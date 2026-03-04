@@ -7,8 +7,8 @@ Usage:
     python3 validate_pipeline.py <pipeline.yaml>
     python3 validate_pipeline.py <pipeline.yaml> --verbose
 
-Based on EdgeDelta validation rules from:
-    edgedelta-main/configv3/config_validation.go
+Based on EdgeDelta Pipeline v3 validation rules.
+See: https://docs.edgedelta.com/configuration-v3
 """
 
 import sys
@@ -32,7 +32,7 @@ except ImportError:
         pass
     INSTRUMENTATION_AVAILABLE = False
 
-# Sequence-compatible processors (from sequence_node.go:52-76)
+# Sequence-compatible processors
 # NOTE: Also includes nested 'sequence', 'comment', 'aggregate_metric', 'ottl_filter'
 # which are valid in production pipelines
 SEQUENCE_COMPATIBLE_PROCESSORS = {

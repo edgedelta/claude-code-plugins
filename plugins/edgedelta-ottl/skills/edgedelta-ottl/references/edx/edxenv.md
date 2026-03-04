@@ -5,7 +5,7 @@
 **Signature**: `EDXEnv(env_var_name, default_value) -> string`
 **Return Type**: string
 **Minimum Agent Version**: v2.5.0
-**Source**: /pkg/ottlext/funcs/func_edx_env.go
+**Source**: https://docs.edgedelta.com/ottl-extensions/
 
 ---
 

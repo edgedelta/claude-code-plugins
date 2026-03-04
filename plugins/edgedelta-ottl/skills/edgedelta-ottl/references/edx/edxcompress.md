@@ -5,7 +5,7 @@
 **Signature**: `EDXCompress(input, compression_type) -> []byte`
 **Return Type**: []byte (compressed data as byte array)
 **Minimum Agent Version**: v1.31.0
-**Source**: /pkg/ottlext/funcs/func_edx_compress.go
+**Source**: https://docs.edgedelta.com/ottl-extensions/
 
 ---
 

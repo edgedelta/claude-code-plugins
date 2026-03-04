@@ -5,7 +5,7 @@
 **Signature**: `EDXDataType(value) -> string`
 **Return Type**: string (type name)
 **Minimum Agent Version**: v1.32.0
-**Source**: /pkg/ottlext/funcs/func_edx_data_type.go
+**Source**: https://docs.edgedelta.com/ottl-extensions/
 
 ---
 

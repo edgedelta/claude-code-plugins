@@ -5,7 +5,7 @@
 **Signature**: `EDXDecompress(input, compression_type, asBytes) -> string|[]byte`
 **Return Type**: string or []byte (based on asBytes parameter)
 **Minimum Agent Version**: v1.31.0
-**Source**: /pkg/ottlext/funcs/func_edx_decompress.go
+**Source**: https://docs.edgedelta.com/ottl-extensions/
 
 ---
 

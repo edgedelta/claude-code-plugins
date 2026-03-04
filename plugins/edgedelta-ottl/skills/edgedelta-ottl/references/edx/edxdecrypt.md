@@ -5,7 +5,7 @@
 **Signature**: `EDXDecrypt(encryptedValue, escape, escapeSeq) -> string`
 **Return Type**: string (decrypted plaintext)
 **Minimum Agent Version**: v2.5.0
-**Source**: /pkg/ottlext/funcs/func_edx_crypto_decrypt.go
+**Source**: https://docs.edgedelta.com/ottl-extensions/
 
 ---
 

@@ -5,7 +5,7 @@
 **Signature**: `EDXDecode(value, encoding_type) -> string`
 **Return Type**: string (decoded text)
 **Minimum Agent Version**: v2.5.0
-**Source**: /pkg/ottlext/funcs/func_edx_decode.go
+**Source**: https://docs.edgedelta.com/ottl-extensions/
 
 ---
 

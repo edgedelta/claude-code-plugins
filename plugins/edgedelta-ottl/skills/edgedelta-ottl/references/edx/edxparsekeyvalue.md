@@ -5,7 +5,7 @@
 **Signature**: `EDXParseKeyValue(target, kvDelimiter, delimiter, shouldConvert, mergeStrategy) -> map[string]any`
 **Return Type**: map[string]any (pcommon.Map)
 **Minimum Agent Version**: v1.22.0
-**Source**: /pkg/ottlext/funcs/func_edx_parse_key_value_pair.go
+**Source**: https://docs.edgedelta.com/ottl-extensions/
 
 ---
 

@@ -5,7 +5,7 @@
 **Signature**: `edx_map_keys(target, old_keys, new_keys, strategy) -> void`
 **Return Type**: void (modifies map in-place)
 **Minimum Agent Version**: v1.26.0
-**Source**: /pkg/ottlext/funcs/func_edx_map_keys.go
+**Source**: https://docs.edgedelta.com/ottl-extensions/
 
 ---
 
