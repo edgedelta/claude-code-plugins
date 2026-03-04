@@ -19,8 +19,7 @@
       "category": "development",
       "homepage": "https://docs.edgedelta.com",
       "tags": ["ottl", "edx", "transformations", "observability"],
-      "strict": false,
-      "skills": ["./plugins/edgedelta-ottl/skills/edgedelta-ottl"]
+      "strict": false
     },
     {
       "name": "edgedelta-pipelines",
@@ -34,8 +33,7 @@
       "category": "development",
       "homepage": "https://docs.edgedelta.com",
       "tags": ["pipelines", "yaml", "observability", "telemetry", "deployment"],
-      "strict": false,
-      "skills": ["./plugins/edgedelta-pipelines/skills/edgedelta-pipelines"]
+      "strict": false
     },
     {
       "name": "edgedelta-reference",
@@ -49,8 +47,7 @@
       "category": "development",
       "homepage": "https://docs.edgedelta.com",
       "tags": ["reference", "processors", "sources", "destinations", "pipeline", "observability"],
-      "strict": false,
-      "skills": ["./plugins/edgedelta-reference/skills/edgedelta-reference"]
+      "strict": false
     }
   ]
 }

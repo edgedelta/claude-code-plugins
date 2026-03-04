@@ -9,5 +9,6 @@
   "homepage": "https://docs.edgedelta.com",
   "repository": "https://github.com/edgedelta/claude-code-plugins",
   "license": "MIT",
-  "keywords": ["pipelines", "yaml", "observability", "telemetry", "deployment", "ottl"]
+  "keywords": ["pipelines", "yaml", "observability", "telemetry", "deployment", "ottl"],
+  "skills": ["./skills/edgedelta-pipelines"]
 }
