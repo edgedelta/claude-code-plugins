@@ -1,0 +1,142 @@
+# sequence_input / sequence_output Processors
+
+**Type**: `sequence_input` / `sequence_output`
+**Category**: Nested Structures (Internal)
+**Sequence Compatible**: ✓ Yes (auto-generated)
+**Source**: `internalv3/processors/sequence/processor.go`
+**Config Struct**: Internal (not user-configurable)
+
+## Overview
+
+The `sequence_input` and `sequence_output` processors are **internal, auto-generated** processors used by EdgeDelta to manage the entry and exit points of sequence processing. These processors are **not manually configured** by users but are important to understand when reading pipeline execution graphs or debugging.
+
+## Purpose
+
+- **sequence_input**: Marks the entry point where telemetry items enter a sequence
+- **sequence_output**: Marks the exit point where telemetry items leave a sequence
+
+These processors are automatically created by EdgeDelta when a sequence node is defined, providing explicit entry/exit points in the processing graph.
+
+## When You See These Processors
+
+You may encounter these processor types when:
+- Viewing pipeline execution graphs in the EdgeDelta UI
+- Reading internal pipeline state or debug logs
+- Troubleshooting sequence processing flow
+- Analyzing pipeline metrics and traces
+
+## Key Characteristics
+
+### sequence_input
+- **Auto-created**: Automatically generated at the start of every sequence
+- **No configuration**: Cannot be manually configured
+- **Single entry point**: One per sequence
+- **Pass-through**: Telemetry items pass through without modification
+- **Purpose**: Provides a named entry node for the sequence in the processing graph
+
+### sequence_output
+- **Auto-created**: Automatically generated at the end of every sequence
+- **No configuration**: Cannot be manually configured
+- **Multiple allowed**: Can have multiple outputs if sequence branches
+- **Pass-through**: Telemetry items pass through without modification
+- **Purpose**: Provides a named exit node for the sequence in the processing graph
+
+## Example Sequence with Auto-Generated Input/Output
+
+When you define a sequence like this:
+
+```yaml
+- name: my_sequence
+  type: sequence
+  processors:
+    - type: ottl_filter
+      statements:
+        - 'attributes["level"] == "DEBUG"'
+    - type: generic_mask
+      capture_group_masks:
+        - capture_group: "password=\\S+"
+          mask: "***PASSWORD***"
+          name: "password"
+      final: true
+```
+
+EdgeDelta **automatically creates** an internal graph that looks like this:
+
+```
+sequence_input (auto-generated)
+    ↓
+ottl_filter
+    ↓
+generic_mask
+    ↓
+sequence_output (auto-generated)
+```
+
+## Internal Graph Representation
+
+The actual processing graph internally has this structure:
+
+```
+[sequence_input: my_sequence]
+         ↓
+[processor: ottl_filter]
+         ↓
+[processor: generic_mask]
+         ↓
+[sequence_output: my_sequence]
+```
+
+This allows EdgeDelta to:
+- Track where items enter and exit sequences
+- Collect metrics per sequence
+- Debug processing flow
+- Validate sequence connectivity
+
+## Why They Exist
+
+1. **Graph Completeness**: Every sequence needs explicit entry/exit points in the processing graph
+2. **Metrics Collection**: Provides points to measure items entering/exiting sequences
+3. **Debugging**: Makes it clear where sequences begin and end in debug logs
+4. **Validation**: Ensures all sequences have proper entry/exit points
+5. **Routing**: Allows sequences to connect to multiple downstream nodes
+
+## Important Notes
+
+- **Not User-Configurable**: You cannot define these processors in your YAML configuration
+- **Transparent**: They do not modify telemetry items in any way
+- **Zero Overhead**: Minimal performance impact (simple pass-through)
+- **One Input Per Sequence**: Each sequence has exactly one sequence_input
+- **Multiple Outputs Possible**: A sequence can have multiple sequence_output nodes if it branches
+- **Internal Implementation**: These are implementation details of the EdgeDelta processing engine
+
+## When Troubleshooting
+
+If you see `sequence_input` or `sequence_output` in error messages or debug logs:
+
+1. **Look at the sequence name**: The processor will include the sequence name (e.g., `sequence_input: my_sequence`)
+2. **Check sequence boundaries**: The error may be at the entry or exit of a sequence
+3. **Validate sequence structure**: Ensure your sequence has proper processors and links
+4. **Review metrics**: These nodes provide metrics about items entering/exiting sequences
+
+## Related Processors
+
+- **sequence**: The container that uses sequence_input/output nodes
+- **compound**: Similar concept with compound_input/compound_output nodes
+
+## Cross-References
+
+- **edgedelta-pipelines skill**: See sequence processor documentation
+- **SKILL.md**: Workflow 2 for sequence usage
+
+## Source Code
+
+- **Implementation**: `internalv3/processors/sequence/processor.go`
+- **Graph Construction**: `internalv3/discover/sequence_node.go`
+
+---
+
+**Status**: Internal processors - not user-configurable, automatically generated by EdgeDelta for sequence processing graph management.
+
+## Documentation References
+
+Internal processor, no public documentation URL.

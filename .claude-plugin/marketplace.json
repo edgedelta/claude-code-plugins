@@ -36,6 +36,21 @@
       "tags": ["pipelines", "yaml", "observability", "telemetry", "deployment"],
       "strict": false,
       "skills": ["./plugins/edgedelta-pipelines/skills/edgedelta-pipelines"]
+    },
+    {
+      "name": "edgedelta-reference",
+      "description": "Complete EdgeDelta v3 pipeline component reference covering 30 sources, 38 processors, and 54 destinations with documentation links and validation rules.",
+      "version": "2.0.0",
+      "author": {
+        "name": "Edge Delta",
+        "email": "plugins@edgedelta.com"
+      },
+      "source": "./plugins/edgedelta-reference",
+      "category": "development",
+      "homepage": "https://docs.edgedelta.com",
+      "tags": ["reference", "processors", "sources", "destinations", "pipeline", "observability"],
+      "strict": false,
+      "skills": ["./plugins/edgedelta-reference/skills/edgedelta-reference"]
     }
   ]
 }

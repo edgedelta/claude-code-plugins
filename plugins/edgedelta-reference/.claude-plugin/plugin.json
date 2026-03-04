@@ -1,0 +1,10 @@
+{
+  "name": "edgedelta-reference",
+  "version": "2.0.0",
+  "description": "Complete EdgeDelta v3 pipeline component reference covering 30 sources, 38 processors, and 54 destinations with documentation links and validation rules.",
+  "author": { "name": "Edge Delta", "email": "plugins@edgedelta.com" },
+  "homepage": "https://docs.edgedelta.com",
+  "repository": "https://github.com/edgedelta/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["edgedelta", "reference", "processors", "sources", "destinations", "pipeline", "observability"]
+}
