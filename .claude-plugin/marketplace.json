@@ -48,6 +48,20 @@
       "homepage": "https://docs.edgedelta.com",
       "tags": ["reference", "processors", "sources", "destinations", "pipeline", "observability"],
       "strict": false
+    },
+    {
+      "name": "edgedelta-dashboards",
+      "description": "Create, update, delete, and manage EdgeDelta dashboards via MCP. Includes v4 schema knowledge, widget builder workflow, and validation guidance.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Edge Delta",
+        "email": "plugins@edgedelta.com"
+      },
+      "source": "./plugins/edgedelta-dashboards",
+      "category": "development",
+      "homepage": "https://docs.edgedelta.com",
+      "tags": ["dashboards", "observability", "monitoring", "mcp", "visualization"],
+      "strict": false
     }
   ]
 }

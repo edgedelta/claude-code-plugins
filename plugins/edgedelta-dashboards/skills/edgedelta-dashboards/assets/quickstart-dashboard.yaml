@@ -1,0 +1,106 @@
+# Quickstart Dashboard - Minimal Working Example
+# This is the simplest valid v4 EdgeDelta dashboard
+# Use this as a template for creating new dashboards
+
+dashboard_name: "Quickstart Dashboard"
+description: "Minimal working example of a v4 EdgeDelta dashboard"
+tags:
+  - quickstart
+  - example
+
+definition:
+  version: 4
+
+  timeFilters:
+    lookback: "1h"  # Options: 15m, 30m, 1h, 3h, 6h, 12h, 24h, 7d, 30d
+
+  widgets:
+    # ROOT WIDGET - REQUIRED! Must be first widget
+    - id: "root"
+      type: "grid"
+      grid: "72px 72px 72px / 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr"
+      # Grid format: "rows / columns"
+      # Standard: 12 columns, 72px per row
+
+    # WIDGET 1: Simple BigNumber showing total log count
+    - id: 1
+      type: "viz"
+      resultType: "aggregate"
+
+      # Position on grid (REQUIRED for all non-root widgets)
+      position:
+        type: "grid"
+        targetId: "root"  # Parent grid
+        area:
+          column: 1       # Start at column 1 (1-12)
+          columnSpan: 6   # Width: 6 columns (half width)
+          row: 1          # Start at row 1
+          rowSpan: 2      # Height: 2 rows
+
+      # Display settings
+      displayOptions:
+        title: "Total Logs"
+
+      # Visualizer type
+      visualizer:
+        type: "bignumber"
+
+      # Data query
+      visuals:
+        - id: "A"
+          dataSource:
+            type: "log"
+            params:
+              query: "*"  # All logs
+
+    # WIDGET 2: Line chart showing log volume over time
+    - id: 2
+      type: "viz"
+      resultType: "timeseries"
+
+      position:
+        type: "grid"
+        targetId: "root"
+        area:
+          column: 7       # Start at column 7 (right side)
+          columnSpan: 6   # Width: 6 columns (half width)
+          row: 1          # Same row as widget 1
+          rowSpan: 2      # Height: 2 rows
+
+      displayOptions:
+        title: "Log Volume Over Time"
+
+      visualizer:
+        type: "line"
+
+      visuals:
+        - id: "A"
+          dataSource:
+            type: "log"
+            params:
+              query: "*"
+
+# Contract: What this dashboard needs to work
+# Not required by schema, but helpful for documentation
+contract:
+  required_data_sources:
+    - "logs"
+
+  prerequisites: |
+    ## Prerequisites
+
+    This quickstart dashboard requires:
+    1. EdgeDelta agent collecting logs
+    2. Logs being sent to EdgeDelta backend
+
+    ### Verification
+
+    Run this command to verify logs are available:
+    ```
+    # In EdgeDelta UI, go to Logs and verify you see data
+    ```
+
+    ### Expected Data
+
+    - Any logs from any source
+    - No specific fields required
