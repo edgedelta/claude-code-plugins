@@ -1,0 +1,108 @@
+# System Metrics Dashboard - v4 EdgeDelta Dashboard
+# Monitors CPU, memory, and disk usage across hosts
+
+dashboard_name: "System Metrics"
+description: "CPU, memory, and disk utilization across hosts"
+tags:
+  - metrics
+  - system
+  - monitoring
+
+definition:
+  version: 4
+
+  timeFilters:
+    lookback: "1h"
+
+  widgets:
+    # ROOT WIDGET - REQUIRED! Must be first widget
+    - id: "root"
+      type: "grid"
+      grid: "72px 72px 72px 72px 72px 72px 72px 72px / 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr"
+      # 8 rows × 12 columns
+
+    # WIDGET 1: CPU Usage (line chart, left half)
+    - id: 1
+      type: "viz"
+      resultType: "timeseries"
+      position:
+        type: "grid"
+        targetId: "root"
+        area:
+          column: 1
+          columnSpan: 6
+          row: 1
+          rowSpan: 4
+      displayOptions:
+        title: "CPU Usage (%)"
+        yAxis:
+          label: "CPU %"
+          min: 0
+          max: 100
+      visualizer:
+        type: "line"
+      visuals:
+        - id: "A"
+          dataSource:
+            type: "metric"
+            params:
+              query: "avg:system.cpu.utilization{*}"
+
+    # WIDGET 2: Memory Usage (line chart, right half)
+    - id: 2
+      type: "viz"
+      resultType: "timeseries"
+      position:
+        type: "grid"
+        targetId: "root"
+        area:
+          column: 7
+          columnSpan: 6
+          row: 1
+          rowSpan: 4
+      displayOptions:
+        title: "Memory Usage (%)"
+        yAxis:
+          label: "Memory %"
+          min: 0
+          max: 100
+      visualizer:
+        type: "line"
+      visuals:
+        - id: "A"
+          dataSource:
+            type: "metric"
+            params:
+              query: "avg:system.memory.utilization{*}"
+
+    # WIDGET 3: Disk Usage (full-width bar chart)
+    - id: 3
+      type: "viz"
+      resultType: "aggregate"
+      position:
+        type: "grid"
+        targetId: "root"
+        area:
+          column: 1
+          columnSpan: 12
+          row: 5
+          rowSpan: 4
+      displayOptions:
+        title: "Disk Usage (%)"
+        yAxis:
+          label: "Disk %"
+          min: 0
+          max: 100
+      visualizer:
+        type: "column"
+      visuals:
+        - id: "A"
+          dataSource:
+            type: "metric"
+            params:
+              query: "avg:system.disk.utilization{*}"
+
+# Prerequisites:
+# - EdgeDelta agent with system metrics collection enabled
+# - Metrics: system.cpu.utilization, system.memory.utilization, system.disk.utilization
+# - Using OpenTelemetry semantic conventions for system metrics

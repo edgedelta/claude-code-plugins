@@ -1,0 +1,15 @@
+{
+  "name": "edgedelta-dashboards",
+  "version": "1.0.0",
+  "description": "Create, update, delete, and manage EdgeDelta dashboards via MCP. Includes v4 schema knowledge for AI-assisted dashboard design.",
+  "author": {
+    "name": "Edge Delta",
+    "email": "plugins@edgedelta.com"
+  },
+  "homepage": "https://docs.edgedelta.com",
+  "repository": "https://github.com/edgedelta/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["edgedelta", "dashboards", "observability", "monitoring", "visualization"],
+  "skills": ["./skills/edgedelta-dashboards"],
+  "mcpConfig": "./.mcp.json"
+}

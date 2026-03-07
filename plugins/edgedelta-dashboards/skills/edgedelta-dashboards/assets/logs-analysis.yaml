@@ -1,0 +1,151 @@
+# Log Analysis Dashboard - v4 EdgeDelta Dashboard
+# Comprehensive log monitoring with error tracking and volume analysis
+
+dashboard_name: "Log Analysis Dashboard"
+description: "Log monitoring, error tracking, and volume analysis by service and severity"
+tags:
+  - logs
+  - errors
+  - observability
+
+definition:
+  version: 4
+
+  timeFilters:
+    lookback: "24h"
+
+  widgets:
+    # ROOT WIDGET - REQUIRED! Must be first widget
+    - id: "root"
+      type: "grid"
+      grid: "72px 72px 72px 72px 72px 72px 72px 72px 72px 72px 72px 72px / 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr"
+      # 12 rows × 12 columns
+
+    # WIDGET 1: Log Volume by Severity (stacked area, left 8 cols)
+    - id: 1
+      type: "viz"
+      resultType: "timeseries"
+      position:
+        type: "grid"
+        targetId: "root"
+        area:
+          column: 1
+          columnSpan: 8
+          row: 1
+          rowSpan: 4
+      displayOptions:
+        title: "Log Volume by Severity"
+      visualizer:
+        type: "area"
+      visuals:
+        - id: "A"
+          dataSource:
+            type: "log"
+            params:
+              query: "*"
+
+    # WIDGET 2: Error Count (big number, right 4 cols)
+    - id: 2
+      type: "viz"
+      resultType: "aggregate"
+      position:
+        type: "grid"
+        targetId: "root"
+        area:
+          column: 9
+          columnSpan: 4
+          row: 1
+          rowSpan: 4
+      displayOptions:
+        title: "Error Count (1h)"
+        thresholds:
+          - value: 0
+            color: "var(--extended-green-500)"
+          - value: 100
+            color: "var(--extended-gold-500)"
+          - value: 1000
+            color: "var(--extended-scarlet-500)"
+      visualizer:
+        type: "bignumber"
+      visuals:
+        - id: "A"
+          dataSource:
+            type: "log"
+            params:
+              query: "level:ERROR"
+            timeFiltersOffset: "-23h"  # 1h window ending at dashboard lookback
+
+    # WIDGET 3: Top Services by Log Volume (column chart, left 6 cols)
+    - id: 3
+      type: "viz"
+      resultType: "aggregate"
+      position:
+        type: "grid"
+        targetId: "root"
+        area:
+          column: 1
+          columnSpan: 6
+          row: 5
+          rowSpan: 4
+      displayOptions:
+        title: "Top Services by Log Volume"
+      visualizer:
+        type: "column"
+      visuals:
+        - id: "A"
+          dataSource:
+            type: "log"
+            params:
+              query: "*"
+
+    # WIDGET 4: Recent Errors (raw table, right 6 cols)
+    - id: 4
+      type: "viz"
+      resultType: "raw"
+      position:
+        type: "grid"
+        targetId: "root"
+        area:
+          column: 7
+          columnSpan: 6
+          row: 5
+          rowSpan: 4
+      displayOptions:
+        title: "Recent Error Messages"
+      visualizer:
+        type: "raw-table"
+      visuals:
+        - id: "A"
+          dataSource:
+            type: "log"
+            params:
+              query: "level:ERROR"
+
+    # WIDGET 5: Full-width log stream (raw table)
+    - id: 5
+      type: "viz"
+      resultType: "raw"
+      position:
+        type: "grid"
+        targetId: "root"
+        area:
+          column: 1
+          columnSpan: 12
+          row: 9
+          rowSpan: 4
+      displayOptions:
+        title: "Log Stream"
+      visualizer:
+        type: "raw-table"
+      visuals:
+        - id: "A"
+          dataSource:
+            type: "log"
+            params:
+              query: "*"
+
+# Prerequisites:
+# - EdgeDelta agent collecting application logs
+# - Logs include severity/level field (DEBUG, INFO, WARN, ERROR, FATAL)
+# - Logs tagged with service.name
+# - Structured logging with OpenTelemetry semantic conventions
