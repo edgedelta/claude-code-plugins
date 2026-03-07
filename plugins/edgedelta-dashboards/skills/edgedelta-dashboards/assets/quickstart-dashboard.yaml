@@ -80,27 +80,7 @@ definition:
             params:
               query: "*"
 
-# Contract: What this dashboard needs to work
-# Not required by schema, but helpful for documentation
-contract:
-  required_data_sources:
-    - "logs"
-
-  prerequisites: |
-    ## Prerequisites
-
-    This quickstart dashboard requires:
-    1. EdgeDelta agent collecting logs
-    2. Logs being sent to EdgeDelta backend
-
-    ### Verification
-
-    Run this command to verify logs are available:
-    ```
-    # In EdgeDelta UI, go to Logs and verify you see data
-    ```
-
-    ### Expected Data
-
-    - Any logs from any source
-    - No specific fields required
+# Prerequisites (non-schema documentation — not submitted to the API):
+# - EdgeDelta agent collecting logs
+# - Logs being sent to EdgeDelta backend
+# - No specific log fields required — query "*" matches all logs

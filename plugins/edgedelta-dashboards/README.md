@@ -16,7 +16,7 @@ Create, update, delete, and manage EdgeDelta dashboards directly from Claude Cod
 2. **EdgeDelta API token** — [create one here](https://docs.edgedelta.com/api-tokens/)
 3. **EdgeDelta organization ID** — [find it here](https://docs.edgedelta.com/my-organization/)
 
-> **Note:** Dashboard management tools (create, update, delete, assemble) require EdgeDelta MCP Server with dashboard support, available in the next MCP server release. The get_all_dashboards and get_dashboard read tools are available today.
+> **Note:** Dashboard management tools (create, update, delete, assemble) require EdgeDelta MCP Server v1.1.0 or later with dashboard support. The `get_all_dashboards` and `get_dashboard` read tools are available in all current releases.
 
 ## Setup
 

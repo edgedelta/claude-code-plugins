@@ -1,7 +1,7 @@
 ---
 name: edgedelta-dashboards
-version: 1.1.0
-last_updated: 2025-10-21
+version: 1.0.0
+last_updated: 2026-03-06
 description: Create, update, delete, and manage EdgeDelta dashboards via the EdgeDelta MCP server. Use when users need to build monitoring dashboards, add widgets, visualize metrics or logs, export dashboard configurations, or work with the EdgeDelta dashboard schema. Recognizes phrases like "build a dashboard", "add a widget", "dashboard schema", "visualize my metrics", "export dashboard", "EdgeDelta panel", "create a chart", "update my dashboard".
 ---
 
@@ -17,7 +17,6 @@ Activate this skill when the user mentions:
 - EdgeDelta visualization, widgets, or panels
 - Dashboard validation errors or schema issues
 - Batch dashboard operations or migrations
-- "edgedelta-dashboards" CLI tool
 - Dashboard authentication or login issues
 
 ## Prerequisites and Setup
@@ -229,9 +228,9 @@ definition:
 - `line`, `area`, `bar` - Time series charts
 - `scatter`, `step`, `smooth` - Specialized time series
 
-**Table**:
-- `table` - Formatted table
-- `raw-table` - Raw data table
+**Table** (resultType: aggregate or raw):
+- `table` - Formatted table (resultType: aggregate)
+- `raw-table` - Raw data table (resultType: raw)
 
 **Special**:
 - `json` - JSON viewer
