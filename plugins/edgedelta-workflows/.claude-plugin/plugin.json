@@ -1,0 +1,14 @@
+{
+  "name": "edgedelta-workflows",
+  "version": "1.0.0",
+  "description": "Generate, validate, and customize EdgeDelta AI workflow configurations with 8 node types, 29 action types, and 5 templates. Use when users need to create, modify, or troubleshoot EdgeDelta workflows.",
+  "author": {
+    "name": "Edge Delta",
+    "email": "plugins@edgedelta.com"
+  },
+  "homepage": "https://docs.edgedelta.com",
+  "repository": "https://github.com/edgedelta/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["workflows", "automation", "ai-teammates", "observability", "sre"],
+  "skills": ["./skills/edgedelta-workflows"]
+}

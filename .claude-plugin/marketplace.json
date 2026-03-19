@@ -48,6 +48,34 @@
       "homepage": "https://docs.edgedelta.com",
       "tags": ["reference", "processors", "sources", "destinations", "pipeline", "observability"],
       "strict": false
+    },
+    {
+      "name": "edgedelta-teammates",
+      "description": "Guides creation and configuration of EdgeDelta AI teammates. Use when users need to build teammates, write system prompts, assign connectors, or scope permissions.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Edge Delta",
+        "email": "plugins@edgedelta.com"
+      },
+      "source": "./plugins/edgedelta-teammates",
+      "category": "development",
+      "homepage": "https://docs.edgedelta.com",
+      "tags": ["teammates", "ai-agents", "system-prompts", "observability", "sre"],
+      "strict": false
+    },
+    {
+      "name": "edgedelta-workflows",
+      "description": "Generate, validate, and customize EdgeDelta AI workflow configurations with 8 node types, 29 action types, and 5 templates.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Edge Delta",
+        "email": "plugins@edgedelta.com"
+      },
+      "source": "./plugins/edgedelta-workflows",
+      "category": "development",
+      "homepage": "https://docs.edgedelta.com",
+      "tags": ["workflows", "automation", "ai-teammates", "observability", "sre"],
+      "strict": false
     }
   ]
 }

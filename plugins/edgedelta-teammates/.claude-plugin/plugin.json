@@ -1,0 +1,14 @@
+{
+  "name": "edgedelta-teammates",
+  "version": "1.0.0",
+  "description": "Guides creation and configuration of EdgeDelta AI teammates. Use when users need to build teammates, write system prompts, assign connectors, or scope permissions.",
+  "author": {
+    "name": "Edge Delta",
+    "email": "plugins@edgedelta.com"
+  },
+  "homepage": "https://docs.edgedelta.com",
+  "repository": "https://github.com/edgedelta/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["teammates", "ai-agents", "system-prompts", "observability", "sre"],
+  "skills": ["./skills/edgedelta-teammates"]
+}
