@@ -16,6 +16,7 @@ plugins/
   edgedelta-reference/             # Component reference (sources/processors/destinations)
   edgedelta-teammates/             # AI teammate configuration
   edgedelta-workflows/             # Workflow automation configs
+  edgedelta-docker-image/          # Custom agent Docker images + SELinux
 ```
 
 Each plugin follows the same internal layout:

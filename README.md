@@ -22,6 +22,7 @@ Official Claude Code plugins from Edge Delta — AI-powered observability automa
 | `edgedelta-reference` | Complete pipeline component reference — 30 sources, 38 processors, 54 destinations with docs links | Ask "what sources/destinations are available", need YAML syntax for any component |
 | `edgedelta-teammates` | Create, configure, and manage AI teammates with system prompts, connector permissions, and channel scoping | Ask about creating teammates, writing system prompts, configuring connector permissions |
 | `edgedelta-workflows` | Generate, validate, and customize event-driven workflow configs with 5 production templates and 29 action types | Say "create a workflow", ask about automation pipelines, triggers, or integrations |
+| `edgedelta-docker-image` | Build custom agent Docker images on any base OS (Ubuntu, RHEL, OEL, SUSE, Alpine) with SELinux guide | Say "custom agent image", "agent on RHEL", "agent version v0.0.0", "SELinux blocking agent" |
 
 ## Installation
 
@@ -35,6 +36,7 @@ Official Claude Code plugins from Edge Delta — AI-powered observability automa
 /plugin install edgedelta-reference@edge-delta-official-plugins
 /plugin install edgedelta-teammates@edge-delta-official-plugins
 /plugin install edgedelta-workflows@edge-delta-official-plugins
+/plugin install edgedelta-docker-image@edge-delta-official-plugins
 ```
 
 ### Team Rollout
@@ -56,7 +58,8 @@ Add to `.claude/settings.json` in your shared repo:
     "edgedelta-pipelines@edge-delta-official-plugins",
     "edgedelta-reference@edge-delta-official-plugins",
     "edgedelta-teammates@edge-delta-official-plugins",
-    "edgedelta-workflows@edge-delta-official-plugins"
+    "edgedelta-workflows@edge-delta-official-plugins",
+    "edgedelta-docker-image@edge-delta-official-plugins"
   ]
 }
 ```

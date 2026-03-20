@@ -76,6 +76,20 @@
       "homepage": "https://docs.edgedelta.com",
       "tags": ["workflows", "automation", "ai-teammates", "observability", "sre"],
       "strict": false
+    },
+    {
+      "name": "edgedelta-docker-image",
+      "description": "Build custom EdgeDelta agent Docker images on any base OS with SELinux support. Use when customers need the agent on specific Linux distributions (Ubuntu, RHEL, Oracle Linux, SUSE, Alpine), need custom packages, custom CA certificates, or encounter version v0.0.0 issues.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Edge Delta",
+        "email": "plugins@edgedelta.com"
+      },
+      "source": "./plugins/edgedelta-docker-image",
+      "category": "development",
+      "homepage": "https://docs.edgedelta.com",
+      "tags": ["docker", "containers", "selinux", "custom-image", "agent", "observability"],
+      "strict": false
     }
   ]
 }
